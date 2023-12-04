@@ -1,0 +1,6 @@
+{
+  "name": "Guia-Dataform-BI",
+  "dependencies": {
+    "@dataform/core": "2.4.2"
+  }
+}
