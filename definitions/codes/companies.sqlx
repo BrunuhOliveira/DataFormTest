@@ -11,4 +11,4 @@
 SELECT
   *
 FROM
-  ${ref('trusted_hubspot','companies')}
+  ${ref('landing_hubspot','companies')}

@@ -3,8 +3,8 @@
 config {
   type: "declaration",
   
-  database: "vhsys-staging",
-  schema: "trusted_hubspot",
+  database: "vhsys-datalake",
+  schema: "landing_hubspot",
   name: "companies",
   description: "raw users table"
 }
