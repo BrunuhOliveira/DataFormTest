@@ -1,0 +1,24 @@
+/* Define o destino ou despejo dos dados e como serão feitos 
+(Particionados,Clusterizados, Appendados, Sobrescritos) */
+
+
+config {
+  type: "table", //Se será criado uma view, materializedview ou uma tabela
+  type: "incremental", // se esses dados serão appendados ou sobreescritos
+  schema: "sandbox", // qual dataset será utilizado no despeko
+  name: "performance_canais_trials_programada", // qual será o nome da tabela
+  bigquery: {   // PARÂMETROS OPCIONAIS PARA O BIGQUERY
+    partitionBy: "DATA",   // SE TERÁ OU TEM, COLUNA PARA PARTICIONAMENTO
+    requirePartitionFilter : true, // SE O PARTICIONAMENTO SERÁ OBRIGATÓRIO PARA QUE SE EXECUTE UMA QUERY
+    clusterBy: ["ATIVIDADE"] // QUAL COLUNA SERÁ USADA PARA CLUSTERIZAÇÃO
+  },
+  
+  description: "bla bla bla",  // OPCIONAL SE DESEJA COLOCAR UMA DESCRIÇÃO NA TABELA
+  tags: ["parte1_dw"]   // TAG PARA ORDENAMENTO
+}
+
+SELECT *, CURRENT_DATETIME('America/Sao_Paulo') AS DATA_JOB_EXTRACAO
+FROM ${ref("data_mart_ops","performance_canais_trials_falado_oportunidade")}  /* Referencia a tabela criada no declarations*/ 
+
+
+

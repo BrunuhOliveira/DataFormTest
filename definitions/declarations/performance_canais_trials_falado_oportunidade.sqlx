@@ -1,0 +1,7 @@
+config {
+ type: "declaration",  //Define que será uma declaração de tabela a ser utilizada
+ database: "vhsys-datalake",  //Define em qual projeto que ele irá encontrar
+ schema: "data_mart_ops",	//Define em qual dataset que ele irá encontrar
+ name: "performance_canais_trials_falado_oportunidade", //Define o nome da tabela
+ description: "raw users table"   //Descrição opcional 
+}
