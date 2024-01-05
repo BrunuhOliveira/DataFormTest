@@ -3,7 +3,8 @@
 
 
 config {
-  type: "table", //Se será criado uma view, materializedview ou uma tabela
+  type: "table", //Se será criado uma tabela, view
+// materialized: true,       Campo necessário se desejar criar uma view materealizada
   type: "incremental", // se esses dados serão appendados ou sobreescritos
   schema: "sandbox", // qual dataset será utilizado no despeko
   name: "performance_canais_trials_programada", // qual será o nome da tabela
